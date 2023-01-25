@@ -3,11 +3,12 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::cin;
 
 Parser::Parser(int argc, char *argv[])
 {
     int arg = 0;
-    while (arg < argc)
+    while (arg < argc - 1)
     {
         arg++;
         string tmp(argv[arg]);
@@ -42,6 +43,12 @@ Parser::Parser(int argc, char *argv[])
             message += ' ';
             arg++;
         }
+    }
+    if (message.size() == 0)
+    {
+        string tmp;
+        while (cin >> tmp)
+            message += tmp + " ";
     }
 }
 
