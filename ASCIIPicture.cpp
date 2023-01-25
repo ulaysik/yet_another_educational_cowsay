@@ -33,7 +33,10 @@ int ASCIIPicture::getWidth()
 {
     if (picture.size() == 0)
         return 0;
-    return picture[0].size();
+    unsigned int max = 0;
+    for (auto s : picture)
+        max = max > s.size() ? max : s.size();
+    return max;
 }
 
 int ASCIIPicture::getHeight()

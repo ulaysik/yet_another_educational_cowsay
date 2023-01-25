@@ -1,5 +1,9 @@
 #include "Parser.hpp"
 
+#include <iostream>
+using std::cout;
+using std::endl;
+
 Parser::Parser(int argc, char *argv[])
 {
     int arg = 0;
@@ -7,6 +11,14 @@ Parser::Parser(int argc, char *argv[])
     {
         arg++;
         string tmp(argv[arg]);
+        if (tmp == "-h")
+        {
+            cout << "-f [cowname] to change the cow source" << endl;
+            cout << "-c [cloudname] to change the cloud source" << endl;
+            cout << "-s to change weather to snow" << endl;
+            cout << "-r to change weather to rain" << endl;
+            exit(0);
+        }
         if (tmp == "-f")
         {
             arg++;

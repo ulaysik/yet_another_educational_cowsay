@@ -5,6 +5,8 @@
 
 class Cloud : public ASCIIPicture {
 
+    string message;
+
 public:
 
     Cloud(string message, string fname);
