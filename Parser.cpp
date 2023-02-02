@@ -1,4 +1,6 @@
 #include "Parser.hpp"
+#include <filesystem>
+namespace fs = std::filesystem;
 
 #include <iostream>
 using std::cout;
@@ -36,6 +38,17 @@ Parser::Parser(int argc, char *argv[])
             flags.snow = true;
         else if (tmp == "-r")
             flags.rain = true;
+        else if (tmp == "-l"){
+            std::cout << "cows:" << std::endl;
+            std::string path = "cows";
+            for (const auto & entry : fs::directory_iterator(path))
+                std::cout << entry.path() << std::endl;
+            std::cout << "clouds:" << std::endl;
+            path = "clouds";
+            for (const auto & entry : fs::directory_iterator(path))
+                std::cout << entry.path() << std::endl;
+            exit(0);
+        }
         else while (arg < argc)
         {
             string tmp(argv[arg]);
