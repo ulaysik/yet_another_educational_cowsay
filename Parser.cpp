@@ -20,6 +20,7 @@ Parser::Parser(int argc, char *argv[])
             cout << "-c [cloudname] to change the cloud source" << endl;
             cout << "-s to change weather to snow" << endl;
             cout << "-r to change weather to rain" << endl;
+	    cout << "-ks to see cringe sun" << endl;
             exit(0);
         }
         if (tmp == "-f")
@@ -36,6 +37,10 @@ Parser::Parser(int argc, char *argv[])
         }
         else if (tmp == "-s")
             flags.snow = true;
+	else if (tmp == "-ks")
+	{
+            flags.ks = true;
+	}
         else if (tmp == "-r")
             flags.rain = true;
         else if (tmp == "-l"){
@@ -92,6 +97,19 @@ char Parser::getFill()
     else 
         return ' ';
 }
+
+char Parser::getSun()
+{
+    if (flags.ks)
+    {
+	return ')';
+    }
+    else 
+	return ' ';
+}
+
+    
+
 
 string Parser::getMessage()
 {
