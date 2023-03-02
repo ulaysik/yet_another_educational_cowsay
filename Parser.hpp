@@ -14,6 +14,7 @@ class Parser {
         bool tongue = false;
         bool snow = false;
         bool rain = false;
+	      bool ks = false;
         bool money = false;
     } flags;
 
@@ -24,9 +25,9 @@ public:
 
     string getCow();
     string getCloud();
-    char getFill();
+    char   getFill();
+    char   getSun();
     string getMessage();
-
 };
 
 #endif
