@@ -13,6 +13,7 @@ class Field {
     string message;
     Cow cow;
     Cloud cloud;
+    string tongue;
     char fill;
     char sun; 
 
