@@ -5,7 +5,7 @@
 using std::cout;
 using std::endl;
 
-Field::Field(Parser& parser) : cow(parser.getCow()), cloud(parser.getMessage(), parser.getCloud()), sun(parser.getSun()), fill(parser.getFill()), message(parser.getMessage()) 
+Field::Field(Parser& parser) : cow(parser.getTongue(), parser.getCow()), cloud(parser.getMessage(), parser.getCloud()), sun(parser.getSun()), fill(parser.getFill()), message(parser.getMessage()), tongue(parser.getTongue())
 {
     
 }
