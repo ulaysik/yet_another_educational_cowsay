@@ -26,8 +26,10 @@ void Cow::print(unsigned int left, char fill, unsigned int width)
                 cout << tongue;
                 j++;
             }
-            else
+            else 
+            {
                 cout << picture[i][j];
+            }
 
         for (int j = width - cowWidth - left + picture[i].size(); j < width; j++)
             cout << fill;
